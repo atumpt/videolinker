@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <input id="video_src" placeholder="Enter URL">
+  <button id="video_load">Load Video</button>
+<br>
+  <video id="video" controls="true"></video>
+<script type="text/javascript">
+  document.getElementById('video').setAttribute('src', window.location.hash.substring(1));
+  document.getElementById('video_load').addEventListener('click', () => {
+    document.getElementById('video').setAttribute('src', document.getElementById('video_src').value);
+    window.location.hash = document.getElementById('video_src').value;
+  });
+</script>
+</body>
+</html>
